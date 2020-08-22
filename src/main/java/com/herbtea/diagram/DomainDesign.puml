@@ -1,0 +1,10 @@
+@startuml
+Screening "*" - "1" Movie
+Screening "1" --  "*" 예매
+Movie "1" -  "0..1" DiscountPolicy
+DiscountPolicy "1" - "1..*" DiscountCondition
+DiscountPolicy <|-- AmountDiscountPolicy
+DiscountPolicy <|-- PercentDiscountPolicy
+DiscountCondition <|-- SequenceCondition
+DiscountCondition <|-- PeriodCondition
+@enduml
